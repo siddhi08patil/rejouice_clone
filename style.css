@@ -1,0 +1,319 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(168, 162, 162);
+  position: relative;
+}
+#cursor{
+    height: 7vw;
+    width: 7vw;
+    background-color:#ff5f38;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+}
+#cursor h5{
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+#page1 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  z-index: 1;
+}
+#page1-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content:space-between ;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 2vw 3vw;
+}
+nav h3{
+    font-size: 1.4vw;
+    font-weight: 100;
+}
+nav h4{
+    font-size: 1.2vw;
+    font-weight: 100;
+}
+#page1-content h1{
+    font-size:23vw ;
+    font-weight:100 ;
+    line-height: 27vw;
+}
+#page1-content h1 span{
+  display: inline-block;
+}
+#page2{
+    height:100vh;
+    width: 100%;
+    background-color:white ;
+    color: black;
+}
+#page2 p{
+    font-size: 40px;
+    color: rgb(99, 94, 94);
+    margin-top: 5px;
+}
+#page2 hr{
+    color: black;
+    margin-top: 5px;
+}
+#page2 h1{
+    font-size: 50px;
+    color: rgb(61, 61, 61);
+    margin-top: 5px;
+    font-weight: 250;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#page3{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 3vw;
+}
+#page3-top{
+  text-align: center;
+}
+#page3-top h4{
+  margin-bottom:1vw;
+  font-size: 1vw;
+  font-weight: 500;
+}
+#page3-top h4 span{
+  font-size: 0.65vw;
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+#page3-top h2{
+  font-size: 4vw;
+  font-weight: 500;
+}
+#page3-elements{
+  height: 70vh;
+  width: 100%;
+  margin-top: 8vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#page3-elements .box{
+  height: 100%;
+  width: 32.5%;
+  position: relative;
+}
+#page3-elements .box video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#page3-elements .box img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all linear 0.8s;
+}
+#page3-elements .box:hover img{
+  opacity: 0;
+}
+.animated-underline a {
+  position: relative;
+  display: inline-block;
+  color: #000; /* Text color */
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size */
+}
+
+.animated-underline a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Thickness of the underline */
+  width: 0;
+  background-color: #000; /* Underline color */
+  transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.animated-underline a:hover::after {
+  width: 100%; /* Fully underline on hover */
+}
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#page4 {
+  padding: 50px;
+}
+
+.elemm {
+  text-align: center;
+}
+
+.elemm h1 span {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px); /* Initial state: text is shifted down */
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Trigger animations for each span with delays */
+.elemm h1 span:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.elemm h1 span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.elemm h1 span:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.elemm h1 span:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.elemm h1 span:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+/* Keyframes for the fade-in up effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in its final position */
+  }
+}
+
+/* Scroll-based triggering */
+.elemm h1 span {
+  will-change: transform, opacity;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.elemm h1 {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.elemm h1 span {
+  animation-play-state: paused; /* Pause animation initially */
+}
+
+.elemm h1 span.in-view {
+  animation-play-state: running; /* Play animation when in view */
+}
+#page5{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page5 video{
+  height: 100%;
+}
+#page5 svg{
+  position: absolute;
+  height: 60%;
+}
+#page6{
+  height: 100vh;
+  width: 100%;
+  padding: 4vw 0;
+  position: relative;
+}
+#page6 h1{
+  font-size: 6vw;
+  font-weight: 300;
+  border-bottom: 1px solid black;
+  width: 96%;
+  margin-left: 2%;
+}
+#swiperdiv{
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  margin-top: -5%;
+}
+.swiper {
+  width: 120%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 20%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+#loader{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 10px;
+}
+#loader h3{
+  font-size: 2vw;
+}
